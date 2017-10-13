@@ -1,5 +1,5 @@
 //
-//  MovieCell.swift
+//  MovieDetailCell.swift
 //  Films
 //
 //  Created by Claire Reynaud on 13/10/2017.
@@ -8,18 +8,17 @@
 
 import UIKit
 
-class MovieCell: UITableViewCell {
+class MovieDetailCell: UITableViewCell {
     
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieRatingLabel: UILabel!
     @IBOutlet weak var movieDescriptionLabel: UILabel!
     
-    func setTitle(_ title: String, description: String, rating: Double, imageName: String) {
+    func setTitle(_ title: String, description: String, rating: Double, landscapeImageName: String) {
         movieTitleLabel.text = title
         movieRatingLabel.text = String(format: "Note : %.1f/10", rating)
         movieDescriptionLabel.text = description
-        movieImageView.image = UIImage(named: imageName)
+        movieImageView.image = UIImage(named: landscapeImageName)
     }
-    
 }

@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -72,6 +73,7 @@
                                     <outlet property="movieImageView" destination="KAA-23-lIc" id="KRC-vZ-gl8"/>
                                     <outlet property="movieRatingLabel" destination="Wbb-BJ-nWz" id="SsV-Hy-VI2"/>
                                     <outlet property="movieTitleLabel" destination="Ozq-tH-PfX" id="bxy-cG-10l"/>
+                                    <segue destination="JrL-Hs-Lov" kind="show" identifier="detailSegue" id="l9D-gh-Bnv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -85,6 +87,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLc-oA-PL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="466.875" y="68.661971830985919"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="BcN-Mj-82y">
+            <objects>
+                <tableViewController id="JrL-Hs-Lov" customClass="MovieDetailViewController" customModule="Films" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5PY-de-2LC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieDetailCell" rowHeight="361" id="XnW-2i-8iL" customClass="MovieDetailCell" customModule="Films" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="361"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XnW-2i-8iL" id="dCX-eX-vem">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="360.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minions-landscape" translatesAutoresizingMaskIntoConstraints="NO" id="SPo-TM-ov1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guardians of the Galaxy Vol. 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm4-lo-OHo">
+                                            <rect key="frame" x="8" y="219" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note : 6.5/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdS-l7-xF7">
+                                            <rect key="frame" x="8" y="248" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bU-FL-6by">
+                                            <rect key="frame" x="8" y="277" width="359" height="76"/>
+                                            <string key="text">Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2bU-FL-6by" firstAttribute="top" secondItem="AdS-l7-xF7" secondAttribute="bottom" constant="8" id="1Uw-OU-VDe"/>
+                                        <constraint firstItem="rm4-lo-OHo" firstAttribute="trailing" secondItem="dCX-eX-vem" secondAttribute="trailingMargin" id="AFb-b5-KZs"/>
+                                        <constraint firstItem="SPo-TM-ov1" firstAttribute="top" secondItem="dCX-eX-vem" secondAttribute="top" id="Cpu-r1-FhY"/>
+                                        <constraint firstItem="rm4-lo-OHo" firstAttribute="leading" secondItem="dCX-eX-vem" secondAttribute="leadingMargin" id="Dcm-Jo-b8V"/>
+                                        <constraint firstItem="AdS-l7-xF7" firstAttribute="top" secondItem="rm4-lo-OHo" secondAttribute="bottom" constant="8" id="Lt0-ft-lJZ"/>
+                                        <constraint firstItem="2bU-FL-6by" firstAttribute="trailing" secondItem="rm4-lo-OHo" secondAttribute="trailing" id="SnH-GN-TdN"/>
+                                        <constraint firstItem="SPo-TM-ov1" firstAttribute="leading" secondItem="dCX-eX-vem" secondAttribute="leading" id="YCh-C6-Zr5"/>
+                                        <constraint firstItem="rm4-lo-OHo" firstAttribute="top" secondItem="SPo-TM-ov1" secondAttribute="bottom" constant="8" id="afU-Uz-gMv"/>
+                                        <constraint firstItem="AdS-l7-xF7" firstAttribute="leading" secondItem="rm4-lo-OHo" secondAttribute="leading" id="gGt-DN-Efj"/>
+                                        <constraint firstItem="2bU-FL-6by" firstAttribute="leading" secondItem="rm4-lo-OHo" secondAttribute="leading" id="hde-FA-TEO"/>
+                                        <constraint firstAttribute="trailing" secondItem="SPo-TM-ov1" secondAttribute="trailing" id="iyf-ue-ECc"/>
+                                        <constraint firstItem="AdS-l7-xF7" firstAttribute="trailing" secondItem="rm4-lo-OHo" secondAttribute="trailing" id="q3d-K3-5os"/>
+                                        <constraint firstItem="SPo-TM-ov1" firstAttribute="height" secondItem="dCX-eX-vem" secondAttribute="width" multiplier="281/500" id="q4h-in-nDY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2bU-FL-6by" secondAttribute="bottom" id="qXa-Oc-kIl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="movieDescriptionLabel" destination="2bU-FL-6by" id="V69-hh-Sll"/>
+                                    <outlet property="movieImageView" destination="SPo-TM-ov1" id="JVZ-qT-6LS"/>
+                                    <outlet property="movieRatingLabel" destination="AdS-l7-xF7" id="j8l-Jx-w5o"/>
+                                    <outlet property="movieTitleLabel" destination="rm4-lo-OHo" id="7FU-kx-Eyr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JrL-Hs-Lov" id="0r9-yX-YvG"/>
+                            <outlet property="delegate" destination="JrL-Hs-Lov" id="KLn-IQ-KRs"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P7g-br-zD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1232.8" y="67.916041979010501"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ebr-NU-iUN">
@@ -105,5 +181,6 @@
     </scenes>
     <resources>
         <image name="minions" width="500" height="750"/>
+        <image name="minions-landscape" width="500" height="281"/>
     </resources>
 </document>
