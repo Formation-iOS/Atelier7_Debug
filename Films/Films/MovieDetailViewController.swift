@@ -31,7 +31,7 @@ class MovieDetailViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MovieDetailCell", for: indexPath) as? MovieDetailCell {
-            cell.setTitle(movie.title, description: movie.description, rating:movie.rating, landscapeImageName: movie.landscapeImageName)
+            cell.setTitle(movie.title, description: movie.overview, rating:movie.vote_average, landscapeImageName: movie.fullBackdropURLString())
             return cell
         }
         return UITableViewCell()

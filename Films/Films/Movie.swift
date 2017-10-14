@@ -8,19 +8,23 @@
 
 import Foundation
 
-class Movie {
+class Movie: NSObject, Codable {
+    var title: String = ""
+    var overview: String = ""
+    var vote_average: Double = 0.0
+    var release_date : Date = Date() // The movie DB format : "2017-09-05"
+    var poster_path : String = ""
+    var backdrop_path : String = ""
     
-    let title: String
-    let description: String
-    let imageName: String
-    let landscapeImageName: String
-    let rating: Double
+    override var description: String {
+        return "\(title) - (\(vote_average)/10)"
+    }
     
-    public init(title: String, description: String, imageName: String, landscapeImageName: String, rating: Double) {
-        self.title = title
-        self.description = description
-        self.imageName = imageName
-        self.landscapeImageName = landscapeImageName
-        self.rating = rating
+    func fullPosterURLString() -> String {
+        return String(format: "https://image.tmdb.org/t/p/w500\(poster_path)")
+    }
+    
+    func fullBackdropURLString() -> String {
+        return String(format: "https://image.tmdb.org/t/p/w500\(backdrop_path)")
     }
 }

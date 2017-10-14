@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MovieDetailCell: UITableViewCell {
     
@@ -19,6 +20,9 @@ class MovieDetailCell: UITableViewCell {
         movieTitleLabel.text = title
         movieRatingLabel.text = String(format: "Note : %.1f/10", rating)
         movieDescriptionLabel.text = description
-        movieImageView.image = UIImage(named: landscapeImageName)
+        movieImageView.image = nil
+        if let url = URL(string: landscapeImageName) {
+            movieImageView.af_setImage(withURL: url)
+        }
     }
 }
