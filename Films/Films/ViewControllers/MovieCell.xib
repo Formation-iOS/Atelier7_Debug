@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="150" id="aGv-oD-2xS" customClass="MovieCell" customModule="Films" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aGv-oD-2xS" id="ffA-dg-4Qa">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="149.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="89m-Vo-tHn">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="h0t-4c-kNi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guardians of the Galaxy Vol. 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcG-kt-Y4V">
+                        <rect key="frame" x="108" y="8" width="179" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note : 6.5/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQ9-mT-Gtv">
+                        <rect key="frame" x="108" y="37" width="179" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hah-15-s0K">
+                        <rect key="frame" x="108" y="66" width="179" height="75.5"/>
+                        <string key="text">Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DcG-kt-Y4V" firstAttribute="leading" secondItem="89m-Vo-tHn" secondAttribute="trailing" constant="8" id="0Qf-Fp-pz9"/>
+                    <constraint firstItem="89m-Vo-tHn" firstAttribute="top" secondItem="ffA-dg-4Qa" secondAttribute="top" id="0fx-W5-baO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="hah-15-s0K" secondAttribute="bottom" id="4zw-OM-WPK"/>
+                    <constraint firstItem="hah-15-s0K" firstAttribute="top" secondItem="qQ9-mT-Gtv" secondAttribute="bottom" constant="8" id="RN1-h1-7yC"/>
+                    <constraint firstItem="qQ9-mT-Gtv" firstAttribute="top" secondItem="DcG-kt-Y4V" secondAttribute="bottom" constant="8" id="SdC-ET-k8L"/>
+                    <constraint firstItem="qQ9-mT-Gtv" firstAttribute="leading" secondItem="DcG-kt-Y4V" secondAttribute="leading" id="TI1-OP-xxQ"/>
+                    <constraint firstItem="DcG-kt-Y4V" firstAttribute="top" secondItem="ffA-dg-4Qa" secondAttribute="topMargin" id="b0C-ny-0R4"/>
+                    <constraint firstItem="hah-15-s0K" firstAttribute="leading" secondItem="DcG-kt-Y4V" secondAttribute="leading" id="f9o-Rf-dAx"/>
+                    <constraint firstItem="89m-Vo-tHn" firstAttribute="leading" secondItem="ffA-dg-4Qa" secondAttribute="leading" id="h2d-M4-dsM"/>
+                    <constraint firstItem="hah-15-s0K" firstAttribute="trailing" secondItem="ffA-dg-4Qa" secondAttribute="trailing" id="mTM-9P-7TR"/>
+                    <constraint firstAttribute="trailing" secondItem="DcG-kt-Y4V" secondAttribute="trailing" id="nQc-Cc-Agw"/>
+                    <constraint firstAttribute="trailing" secondItem="qQ9-mT-Gtv" secondAttribute="trailing" id="vxk-1f-ETB"/>
+                    <constraint firstAttribute="bottom" secondItem="89m-Vo-tHn" secondAttribute="bottom" id="xj7-xM-jZW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="movieDescriptionLabel" destination="hah-15-s0K" id="PmU-1k-yR5"/>
+                <outlet property="movieImageView" destination="89m-Vo-tHn" id="hvG-xj-6vs"/>
+                <outlet property="movieRatingLabel" destination="qQ9-mT-Gtv" id="lWC-wu-154"/>
+                <outlet property="movieTitleLabel" destination="DcG-kt-Y4V" id="RcY-fq-BAv"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="-142"/>
+        </tableViewCell>
+    </objects>
+</document>

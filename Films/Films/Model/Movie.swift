@@ -9,12 +9,14 @@
 import Foundation
 
 class Movie: NSObject, Codable {
+    var id: Int = 0
     var title: String = ""
     var overview: String = ""
     var vote_average: Double = 0.0
     var release_date : Date = Date() // The movie DB format : "2017-09-05"
     var poster_path : String = ""
     var backdrop_path : String = ""
+    var watchlist: Bool? = false
     
     override var description: String {
         return "\(title) - (\(vote_average)/10)"

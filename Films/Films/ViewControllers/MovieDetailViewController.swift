@@ -31,7 +31,10 @@ class MovieDetailViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MovieDetailCell", for: indexPath) as? MovieDetailCell {
-            cell.setTitle(movie.title, description: movie.overview, rating:movie.vote_average, landscapeImageName: movie.fullBackdropURLString())
+            cell.setMovie(movie)
+            cell.watchListToggleHandler = { inWatchList in
+              self.tableView.reloadRows(at: [indexPath], with: .none)
+            }
             return cell
         }
         return UITableViewCell()

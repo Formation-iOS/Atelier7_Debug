@@ -16,12 +16,11 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var movieRatingLabel: UILabel!
     @IBOutlet weak var movieDescriptionLabel: UILabel!
     
-    func setTitle(_ title: String, description: String, rating: Double, imageName: String) {
-        movieTitleLabel.text = title
-        movieRatingLabel.text = String(format: "Note : %.1f/10", rating)
-        movieDescriptionLabel.text = description
-        movieImageView.image = nil
-        if let url = URL(string: imageName) {
+    func setMovie(_ movie: Movie) {
+        movieTitleLabel.text = movie.title
+        movieRatingLabel.text = String(format: "Note : %.1f/10", movie.vote_average)
+        movieDescriptionLabel.text = movie.overview
+        if let url = URL(string: movie.fullPosterURLString()) {
             movieImageView.af_setImage(withURL: url)
         }
     }
