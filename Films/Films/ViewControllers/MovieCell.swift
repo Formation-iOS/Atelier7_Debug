@@ -19,7 +19,11 @@ class MovieCell: UITableViewCell {
     func setMovie(_ movie: Movie) {
         movieTitleLabel.text = movie.title
         movieRatingLabel.text = String(format: "Note : %.1f/10", movie.vote_average)
+        if (movie.vote_average > 8) {
+            movieRatingLabel.textColor = .red
+        }
         movieDescriptionLabel.text = movie.overview
+        movieImageView.image = nil
         if let url = URL(string: movie.fullPosterURLString()) {
             movieImageView.af_setImage(withURL: url)
         }
