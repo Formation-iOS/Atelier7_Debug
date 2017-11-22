@@ -19,7 +19,7 @@ class MovieCell: UITableViewCell {
     func setMovie(_ movie: Movie) {
         movieTitleLabel.text = movie.title
         movieRatingLabel.text = String(format: "Note : %.1f/10", movie.vote_average)
-        if (movie.vote_average > 8) {
+        if (movie.vote_average > 7.5) {
             movieRatingLabel.textColor = .red
         }
         movieDescriptionLabel.text = movie.overview
