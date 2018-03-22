@@ -10,7 +10,7 @@ import UIKit
 
 class MovieDetailViewController: UITableViewController {
     
-    var movie: Movie!
+    var movie: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class MovieDetailViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        title = movie.title
+        title = movie?.title
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,9 +31,11 @@ class MovieDetailViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MovieDetailCell", for: indexPath) as? MovieDetailCell {
-            cell.setMovie(movie)
-            cell.watchListToggleHandler = { inWatchList in
-              self.tableView.reloadRows(at: [indexPath], with: .none)
+            if let movie = movie {
+                cell.setMovie(movie)
+            }
+            cell.watchListToggleHandler = { [weak self] inWatchList in
+              self?.tableView.reloadRows(at: [indexPath], with: .none)
             }
             return cell
         }

@@ -159,12 +159,12 @@ class APIRequestManager {
                 
                 Alamofire.request(url, method: .post, parameters: ["media_type": "movie", "media_id": movieId, "watchlist": true]).responseJSON { response in
                     if let error = response.error {
+                        print("Error: \(error)")
                         result(error)
                         return
                     }
                     
                     print("Response: \(response.result.value as! Dictionary<String, Any>)")
-                    print("Error: \(response.error!)")
                     
                     result(nil)
                 }

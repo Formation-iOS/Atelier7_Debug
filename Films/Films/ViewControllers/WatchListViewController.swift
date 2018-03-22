@@ -15,6 +15,13 @@ class WatchListViewController: MoviesViewController {
         super.viewDidLoad()
         
         title = "Watchlist"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(WatchListViewController.fetchMoviesNotif(notification:)), name: Notification.Name.watchListUpdated, object: nil)
+    }
+    
+    @objc func fetchMoviesNotif(notification: Notification) {
+        print(notification)
+        fetchMovies()
     }
     
     override func fetchMovies() {

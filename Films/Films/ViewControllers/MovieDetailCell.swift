@@ -38,6 +38,10 @@ class MovieDetailCell: UITableViewCell {
         }
     }
     
+    @IBAction func addToWatchList(_ sender: Any) {
+        watchListButtonTapped()
+    }
+    
     func watchListButtonTapped() {
         guard let sessionId = UserAccount.getSessionId(), let movie = movie else {
             return
@@ -45,6 +49,7 @@ class MovieDetailCell: UITableViewCell {
         
         let hud = MBProgressHUD.showAdded(to: contentView, animated: true)
         APIRequestManager.addToWatchList(movieId: movie.id, sessionId: sessionId) { (error) in
+            NotificationCenter.default.post(name: Notification.Name.watchListUpdated, object: nil)
             movie.watchlist = true
             self.watchListToggleHandler?(true)
             hud.hide(animated: true)

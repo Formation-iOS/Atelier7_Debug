@@ -59,6 +59,7 @@ class MoviesViewController: UITableViewController {
     private func showDetailForMovie(_ movie: Movie) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let movieDetailVC = storyboard.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController {
+            movieDetailVC.movie = movie
             navigationController?.pushViewController(movieDetailVC, animated: true)
         }
     }

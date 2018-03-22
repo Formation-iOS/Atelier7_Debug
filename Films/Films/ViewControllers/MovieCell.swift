@@ -21,6 +21,8 @@ class MovieCell: UITableViewCell {
         movieRatingLabel.text = String(format: "Note : %.1f/10", movie.vote_average)
         if (movie.vote_average > 7.5) {
             movieRatingLabel.textColor = .red
+        } else {
+            movieRatingLabel.textColor = .black
         }
         movieDescriptionLabel.text = movie.overview
         movieImageView.image = nil
